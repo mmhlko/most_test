@@ -1,0 +1,1 @@
+export const SET_CARDLIST = "SET_CARDLIST";

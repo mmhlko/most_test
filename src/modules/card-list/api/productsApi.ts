@@ -5,9 +5,9 @@ import { TProductsResponse } from "../types/cardListTypes";
 
 export class ProductsApi {
 
-    fetchSpots(): Promise<AxiosResponse<TProductsResponse>> {
+    fetchProducts(): Promise<AxiosResponse<TProductsResponse>> {
         return api.get(RoutePath.products);
     }
 }
 
-export const apiSpots = new ProductsApi();
+export const apiProducts= new ProductsApi();

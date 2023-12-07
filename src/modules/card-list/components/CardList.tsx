@@ -68,7 +68,6 @@ export const CardList = () => {
     }
 
     const handleClickPage = (page: number) => {
-        console.log('lastPage', totalCardsCount);
         setPage(page);
         page === 1 ? setStartItem(0) : setStartItem((page - 1) * PAGE_SIZE);       
         page === lastPage && setStartItem(totalCardsCount - PAGE_SIZE)

@@ -1,23 +1,40 @@
 import { useEffect } from "react"
 import { apiProducts } from "../api/productsApi"
 import { useDispatch } from "react-redux"
-import { setCardListAction } from "../store/cardListActions";
+import { setCardListAction, setCardListErrorAction, setCardListLoadingAction } from "../store/cardListActions";
 import { useAppSelector } from "storage/hookTypes";
-import { Card } from "components/card/Card";
+import { Card } from "modules/card-list/components/card/Card";
 import s from "./styles.module.scss"
+import { cardListSelector } from "../store/cardListSelectors";
+import { Spinner } from "components/spinner/Spinner";
+import { AxiosError } from "axios";
 
 export const CardList = () => {
-    const productList = useAppSelector(state => state.cardList?.data?.products)
+    const { data: products, loading } = useAppSelector(cardListSelector)
+    const productList = products?.products
     const dispatch = useDispatch();
 
-    useEffect(() => {       
-        !productList && apiProducts.fetchProducts()
+    const apiGetProducts = () => {
+        dispatch(setCardListLoadingAction(true))
+        apiProducts.fetchProducts()
             .then(res => dispatch(setCardListAction(res.data)))
+            .catch((err: AxiosError) => dispatch(setCardListErrorAction(err.message)))
+            .finally(() => dispatch(setCardListLoadingAction(false)))
+    }
+
+    useEffect(() => {
+        !productList && apiGetProducts()
     }, [])
 
     return (
-        <section className={s.cardList_wrapper}>
-            {productList?.map(item => <Card key={item.id} {...item}/>)}
-        </section>
-    )   
+        <>
+            {
+                loading
+                    ? <Spinner />
+                    : <section className={s.cardList_wrapper}>
+                        {productList?.map(item => <Card key={item.id} {...item} />)}
+                    </section>
+            }
+        </>
+    )
 }

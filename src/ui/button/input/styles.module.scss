@@ -1,0 +1,18 @@
+.input {
+	width: 280px;
+	height: 72px;
+	display: inline-flex;
+	padding: 20px;
+	align-items: center;
+	gap: 168px;
+	border-radius: 10px;
+	background: #fff;
+	outline: none;
+	border: 1px solid transparent;
+};
+
+@media (max-width: 480px) {
+    .input {
+		width: 100%;
+	};
+}

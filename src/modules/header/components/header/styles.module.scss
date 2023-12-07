@@ -1,3 +1,26 @@
-.wrapper {
+.header {
     background-color: var(--background-color-blue);
+
+    &__wrapper {
+        align-items: center;
+        display: flex;
+        gap: 80px;
+        justify-content: space-between;
+
+        .logo {
+            color: #fff;
+            font-weight: 700;
+            font-size: 32px;
+            padding: 16px 0;
+        }
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+
+            &__link {
+                color: #fff;
+            }
+        }
+    }
 }

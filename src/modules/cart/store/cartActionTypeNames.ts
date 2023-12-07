@@ -1,0 +1,3 @@
+export const SET_CART_DATA = "SET_CART_DATA";
+export const SET_CART_LOADING = "SET_CART_LOADING";
+export const SET_CART_ERROR = "SET_CART_ERROR";

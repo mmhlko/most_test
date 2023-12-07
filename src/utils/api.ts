@@ -1,7 +1,7 @@
 import axios from "axios";
-import Cookies from "js-cookie";
+import { getToken } from "./auth";
 
-export const AUTH_TOKEN = Cookies.get("token") || null;
+export const AUTH_TOKEN = getToken() || null;
 export const api = axios.create();
 
 api.defaults.baseURL = "https://dummyjson.com/";

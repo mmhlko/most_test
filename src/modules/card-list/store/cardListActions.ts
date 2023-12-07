@@ -1,5 +1,5 @@
-import { TCardListDataAction, TCardListErrorAction, TCardListLoadingAction, TCurrentSortAction } from "modules/card-list/store/types/cardListActionTypes";
-import { SET_CARDLIST, SET_CARDLIST_BY_CURRENT_SORT, SET_CARDLIST_ERROR, SET_CARDLIST_LOADING } from "./cardListActionTypeNames";
+import { TCardListDataAction, TCardListErrorAction, TCardListLoadingAction, TCurrentSortAction, TResetCurrentSortAction } from "modules/card-list/store/types/cardListActionTypes";
+import { RESET_CARDLIST_BY_CURRENT_SORT, SET_CARDLIST, SET_CARDLIST_BY_CURRENT_SORT, SET_CARDLIST_ERROR, SET_CARDLIST_LOADING } from "./cardListActionTypeNames";
 import { TProductsResponse } from "../types/cardListTypes";
 
 export const setCardListAction = (data: TProductsResponse): TCardListDataAction => {
@@ -27,5 +27,11 @@ export const setCardListByCurrentSortAction = (sort: string): TCurrentSortAction
     return {
         type: SET_CARDLIST_BY_CURRENT_SORT,
         payload: sort        
+    }
+}
+
+export const resetCardListCurrentSortAction = (): TResetCurrentSortAction => {
+    return {
+        type: RESET_CARDLIST_BY_CURRENT_SORT,
     }
 }

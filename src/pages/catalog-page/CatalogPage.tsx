@@ -1,4 +1,4 @@
-import { ContentHeader } from "components/content-header"
+import { ContentHeader } from "components/content-header/ContentHeader"
 import { CardList } from "modules/card-list"
 
 export const CatalogPage = () => {

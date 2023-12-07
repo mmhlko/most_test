@@ -1,6 +1,6 @@
 
 import { TCartProduct } from 'modules/cart/types/cartTypes';
-import CartItem from '../cart-item';
+import CartItem from '../cart-item/CartItem';
 import s from './styles.module.scss'
 
 export const CartList = ({productsCart}: {productsCart: TCartProduct[]}) => {

@@ -1,4 +1,4 @@
-import { ContentHeader } from "components/content-header"
+import { ContentHeader } from "components/content-header/ContentHeader"
 import { Profile } from "modules/profile/components/Profile"
 
 export const ProfilePage  = () => {

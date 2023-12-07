@@ -1,4 +1,4 @@
-import { ProductPrice } from "components/product-price";
+import { ProductPrice } from "components/product-price/ProductPrice";
 import { TCartProduct } from "modules/cart/types/cartTypes";
 import s from "./styles.module.scss"
 import { RoutePath } from "pages/routeConfig";

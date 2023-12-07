@@ -1,4 +1,4 @@
-import { ContentHeader } from "components/content-header"
+import { ContentHeader } from "components/content-header/ContentHeader"
 import { Input } from "ui/button/input/Input"
 import s from "./styles.module.scss"
 import { Button } from "ui/button/Button"

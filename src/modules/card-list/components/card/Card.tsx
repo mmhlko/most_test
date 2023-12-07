@@ -1,10 +1,10 @@
 import { TCard } from "modules/card-list/types/cardListTypes"
 import s from "./styles.module.scss"
-import { ProductPrice } from "components/product-price"
+import { ProductPrice } from "components/product-price/ProductPrice"
 import { Button } from "ui/button/Button"
 import { Link } from "react-router-dom"
 import { RoutePath } from "pages/routeConfig"
-import Rating from "components/rating"
+import Rating from "components/rating/Rating"
 
 export const Card = (props:TCard) => {
 

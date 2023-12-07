@@ -1,7 +1,7 @@
 import { FormEvent, useEffect, useState } from "react"
 import { apiProducts } from "../api/productsApi"
 import { useDispatch } from "react-redux"
-import { setCardListAction, setCardListByCurrentSortAction, setCardListErrorAction, setCardListLoadingAction } from "../store/cardListActions";
+import { resetCardListCurrentSortAction, setCardListAction, setCardListByCurrentSortAction, setCardListErrorAction, setCardListLoadingAction } from "../store/cardListActions";
 import { useAppSelector } from "storage/hookTypes";
 import { Card } from "modules/card-list/components/card/Card";
 import s from "./styles.module.scss"
@@ -43,7 +43,10 @@ export const CardList = () => {
         apiProducts.fetchProductsByCategory(category)
             .then(res => dispatch(setCardListAction(res.data)))
             .catch((err: AxiosError) => dispatch(setCardListErrorAction(err.message)))
-            .finally(() => dispatch(setCardListLoadingAction(false))) 
+            .finally(() => {
+                dispatch(setCardListLoadingAction(false))
+                dispatch(resetCardListCurrentSortAction())
+            }) 
     }
 
     const handleSortInputChange = (tab: string) => {

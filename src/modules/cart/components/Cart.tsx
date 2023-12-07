@@ -4,9 +4,9 @@ import { useDispatch } from "react-redux"
 import { useAppSelector } from "storage/hookTypes";
 import { setCartDataAction, setCartErrorAction, setCartLoadingAction } from "../store/cartActions";
 import s from "./styles.module.scss";
-import CartInfo from "./cart-info";
-import { CartList } from "./cart-list";
-import { CartAmount } from "./cart-amount";
+import CartInfo from "./cart-info/CartInfo";
+import { CartList } from "./cart-list/CartList";
+import { CartAmount } from "./cart-amount/CartAmount";
 import { cartSelector } from "../store/cartSelectors";
 import { Spinner } from "components/spinner/Spinner";
 import { AxiosError } from "axios";

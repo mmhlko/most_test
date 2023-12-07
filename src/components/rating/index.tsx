@@ -6,12 +6,13 @@ import classNames from 'classnames';
 const MAX_COUNT_RATING = 5;
 
 type TRatingProps = {
-    currentRating: number, 
+    currentRating: number,
+    oneStar?: boolean
 }
 
-const Rating = ({ currentRating }: TRatingProps) => {
+const Rating = ({ currentRating, oneStar }: TRatingProps) => {
 
-    const [ratingArray, setRatingArray] = useState(new Array(MAX_COUNT_RATING).fill(<></>))
+    const [ratingArray, setRatingArray] = useState(new Array(oneStar ? 1 : MAX_COUNT_RATING).fill(<></>))
 
     const constructRating = (filledRating:number) => {
 

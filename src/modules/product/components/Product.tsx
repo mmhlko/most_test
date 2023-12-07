@@ -42,12 +42,9 @@ export const Product = () => {
                                 <img src={singleProduct?.thumbnail} alt={singleProduct?.title} />
                             </div>
                             <div className={s.desc}>
-                                <Rating currentRating={singleProduct?.rating} />
+                                <Rating currentRating={Math.round(singleProduct?.rating)} />
                                 <ProductPrice price={singleProduct?.price} discount={singleProduct?.discountPercentage} type='small' />
                                 <p>In stock: {singleProduct?.stock}</p>
-                                <div className={s.btnWrap}>
-                                    <Button>Add to cart</Button>
-                                </div>
                             </div>
 
                         </div>

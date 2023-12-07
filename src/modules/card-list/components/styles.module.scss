@@ -6,6 +6,18 @@
 	row-gap: 40px;
 	column-gap: 16px;	
 }
+.pagination {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 5px rgba(40, 41, 61, 0.40), 0 8px 16px rgba(96, 97, 112, 0.40);
+    position: fixed;
+    background-color: white;
+    bottom: 86px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 12px;
+    border-radius: 10px;
+}
 
 @media (max-width: 880px) {
 	.cardList_wrapper {

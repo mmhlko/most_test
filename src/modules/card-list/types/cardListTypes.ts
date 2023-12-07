@@ -21,7 +21,7 @@ export type TProductsResponse = {
 
 export enum TABS_ID {
     PRICE = "price",
-    DISCOUNT = "discount",
+    DISCOUNT = "discountPercentage",
     RATING = "rating",
 }
 export type Tab = {
@@ -32,14 +32,14 @@ export type Tab = {
 export const TABS: Tab[] = [
     {
         id: TABS_ID.PRICE,
-        title: "По цене",
+        title: "Price",
     },
     {
         id: TABS_ID.DISCOUNT,
-        title: "По размеру скидки",
+        title: "Discount",
     },
     {
         id: TABS_ID.RATING,
-        title: "По рейтингу"
+        title: "Rating"
     },
 ]

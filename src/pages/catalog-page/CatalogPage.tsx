@@ -5,7 +5,7 @@ export const CatalogPage = () => {
     
     return (
         <div className="content container">
-            <ContentHeader title="Каталог" textButton='Главная' to='/' />
+            <ContentHeader title="Products" textButton='Home' to='/' />
             <CardList />
         </div>
     )
